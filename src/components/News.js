@@ -83,5 +83,3 @@ News.propTypes = {
     categoty: PropTypes.string
 }
 export default News
-
-// video 39
