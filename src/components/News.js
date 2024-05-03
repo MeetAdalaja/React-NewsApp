@@ -49,23 +49,26 @@ const News = (props) => {
     return (
         <div className='container my-3'>
             <h1 className='text-center' style={{ marginTop: '75px' }}>ReadyNews - Top {capitalizeFirstLetter(props.category)} HeadLines</h1>
-            {loading && <Spinner />}
-            <InfiniteScroll
-                dataLength={articles.length}
-                next={fetchMoreData}
-                hasMore={articles.length !== totalResults}
-                loader={<Spinner />}
-            >
-                <div className="container">
-                    <div className="row">
-                        {articles.map((element) => {
-                            return <div className="col-md-4" key={element.url}>
-                                <NewsItem title={element.title ? element.title : ""} description={element.description ? element.description : ""} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
-                            </div>
-                        })}
+            {loading ? (
+                <Spinner />
+            ) : (
+                <InfiniteScroll
+                    dataLength={articles.length}
+                    next={fetchMoreData}
+                    hasMore={articles.length !== totalResults}
+                    loader={<Spinner />}
+                >
+                    <div className="container">
+                        <div className="row">
+                            {articles.map((element) => {
+                                return <div className="col-md-4" key={element.url}>
+                                    <NewsItem title={element.title ? element.title : ""} description={element.description ? element.description : ""} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
+                                </div>
+                            })}
+                        </div>
                     </div>
-                </div>
-            </InfiniteScroll>
+                </InfiniteScroll>
+            )}
         </div>
     )
 }
