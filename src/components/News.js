@@ -33,7 +33,7 @@ const News = (props) => {
         updateNews();
         document.title = `${capitalizeFirstLetter(props.category)} - ReadyNews`;
 
-    }, [])
+    }, []);
 
     const fetchMoreData = async () => {
         const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page + 1}&pageSize=${props.pageSize}`;
@@ -75,7 +75,7 @@ const News = (props) => {
 
 
 News.defaultProps = {
-    country: 'in',
+    country: 'us',
     pageSize: 9,
     categoty: 'general'
 }
