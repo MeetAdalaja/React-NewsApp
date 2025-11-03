@@ -27,7 +27,7 @@ Supports client‑side routing, loading states, and optional infinite scroll.
 
 ## 🖥️ Live Demo
 
-> Add your deployment URL here once live (Vercel/Netlify/GitHub Pages).
+**▶️ https://react-news-drozvvtdu-meet-adalajas-projects.vercel.app/**
 
 ---
 
